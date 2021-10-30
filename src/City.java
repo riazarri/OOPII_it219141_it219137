@@ -10,8 +10,9 @@ public class City {
 
 	private String city;
 	private int[] terms_vector=new int[10];
-	private double[] geodestic_vector=new double[2];
+	//private double[] geodestic_vector=new double[2];
 	private String country;
+
 
 	/** Counts distinct words in the input String.
 	@param str The input String. 
@@ -121,7 +122,7 @@ public class City {
 
 		public static void main(String[] args) throws IOException {
 			
-			String text="cafe sea cinema stadium theater mountain restaurant bowling bar museums";
+			String text="cafe sea cinema stadium theater mountain restaurant kelvin clouds coord";
 			System.out.println("The number of distinct words is: "+countDistinctWords(text));
 			System.out.println("The number of total words is: "+countTotalWords(text));
 			System.out.println(""+countCriterionfCity(text,"history"));
@@ -167,8 +168,9 @@ public class City {
 	public void setTerms_vector(int[] terms_vector) {
 		this.terms_vector = terms_vector;
 	}
+	
 
-	public double getGeodestic_vector(int index) {
+	/*public double getGeodestic_vector(int index) {
 		
 		return geodestic_vector[index];
 	}
@@ -176,6 +178,8 @@ public class City {
 	public void setGeodestic_vector(double[] geodestic_vector) {
 		this.geodestic_vector = geodestic_vector;
 	}
+	*/
+	
 	
 	public String getCity() {
 		return city;
