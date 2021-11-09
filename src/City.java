@@ -4,13 +4,22 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import weather.OpenWeatherMap;
 import wikipedia.MediaWiki;
 import java.util.ArrayList;
+//import java.util.Vector;
+
 
 public class City {
+	
+
+public City(String city,String country) {
+	this.city=city;	
+	this.country=country;
+	
+}
 
 
 	private String city;
 	private int[] terms_vector=new int[10];
-	//private double[] geodestic_vector=new double[2];
+	private double[] geodestic_vector=new double[2];
 	private String country;
 
 
@@ -67,67 +76,45 @@ public class City {
 		}
 		
 		//*****************************************
-		//normalized_feature(#termi) eksisosi
-		public void normalized_feature(City obj) {
+		//normalized-geodesic_distance(Athens,city)
+		
+		protected static double normalizedGeodesicDis(double dis) {
+			//theoroume os maxdist thn apostash athina- sidney
+			double maxdist =15325.004318104428 , sum;
+			//sum = dist/maxdist;
+			sum = 1051.715047013162/maxdist; //apostasi Rome
+		
+			return sum;
 			
-					double termi = 0, min = 0, max= 10;
-					for(int i=0 ; i<10 ; i++) {
-					if (termi>=0  || termi<=10) {
-						termi = termi - min*(termi) / max*(termi) - min*(termi);
-					}
-					}
 		}
-				
+		
+
 	   //*****************************************
 		//min-max escaler gia temp min(temp)=184 , max(temp)=331
-		double temp;
-			 double minmax_temp(City obj) {
-				//double temp;
-				double min=184, max=331;
-				for(int i=0 ; i<10 ; i++) {
-			
-				temp= temp -min*(temp)/max*(temp) - min*(temp);
-				//return temp/100;
-			}
-				return temp/100;
-			}
+		
+		protected static double normalizedTemp(double temp) {
+
+	        double min = 184.0, max = 331.0, sum;
+	        //Athens temp=288.35
+	        sum = ( 278.71 - min) / (max - min);
+
+	        return sum;
+	    }
 		//*****************************************
 		 
 		
-			static class DistanceCalculator//anti gia public ebala static, ebgaze error
-			{
-				//double distance;
-				//ebgaze erroe gia to static kai to esbhsa
-				private static double distance(double lat1, double lon1, double lat2, double lon2, String unit) {
-					
-					if ((lat1 == lat2) && (lon1 == lon2)) {
-						return 0;
-					}
-					else {
-						double theta = lon1 - lon2;
-						double dist = Math.sin(Math.toRadians(lat1)) * Math.sin(Math.toRadians(lat2)) + Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2)) * Math.cos(Math.toRadians(theta));
-						dist = Math.acos(dist);
-						dist = Math.toDegrees(dist);
-						dist = dist * 60 * 1.1515;
-						if (unit.equals("K")) {
-							dist = dist * 1.609344;
-						} else if (unit.equals("N")) {
-							dist = dist * 0.8684;
-						}
-						return (dist);
-					}
-				}
-			
-				
-
-		public static void main(String[] args) throws IOException {
-			
+	
+		
+		//public static void main(String[] args) throws IOException {
+		public  void main(String[] args)throws IOException {
+			 
 			String text="cafe sea cinema stadium theater mountain restaurant kelvin clouds coord";
 			System.out.println("The number of distinct words is: "+countDistinctWords(text));
 			System.out.println("The number of total words is: "+countTotalWords(text));
-			System.out.println(""+countCriterionfCity(text,"history"));
+			System.out.println(""+countCriterionfCity(text,"cafe"));
 			
 			String appid ="f6e09b871118a28d90453e0eaac10096";
+	
 			
 			RetrieveData("Rome","it",appid);	
 			RetrieveData("Athens","gr",appid);
@@ -139,27 +126,13 @@ public class City {
 			RetrieveData("Croatia","hr",appid);
 			RetrieveData("Cairo","eg",appid);
 			RetrieveData("Sydney","au",appid);
-		
-
-			//edo prepei na kaleso kai tis 2 esksisoseis
-			//normalized_feature();
-			//minmax_temp();
-			
-		System.out.println(distance(32.9697, -96.80322, 29.46786, -98.53506, "M") + " Miles\n");
+		/*System.out.println(distance(32.9697, -96.80322, 29.46786, -98.53506, "M") + " Miles\n");
 		System.out.println(distance(32.9697, -96.80322, 29.46786, -98.53506, "K") + " Kilometers\n");
 		System.out.println(distance(32.9697, -96.80322, 29.46786, -98.53506, "N") + " Nautical Miles\n");
+		*/
 		}
-			}
 
 		
-			
-		
-
-	public City(String city,String country) {
-		this.city=city;	
-		this.country=country;
-		
-	}
 
 	public int getTerms_vector(int index) {
 		return terms_vector[index];
@@ -170,7 +143,7 @@ public class City {
 	}
 	
 
-	/*public double getGeodestic_vector(int index) {
+	public double getGeodestic_vector(int index) {
 		
 		return geodestic_vector[index];
 	}
@@ -178,7 +151,7 @@ public class City {
 	public void setGeodestic_vector(double[] geodestic_vector) {
 		this.geodestic_vector = geodestic_vector;
 	}
-	*/
+	
 	
 	
 	public String getCity() {
@@ -196,6 +169,7 @@ public class City {
 	public void setCountry(String country) {
 		this.country = country;
 	}
+	
 	
 }	
 	
