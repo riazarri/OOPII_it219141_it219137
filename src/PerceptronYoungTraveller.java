@@ -1,103 +1,53 @@
-import java.util.Vector;
+package Towns;
 
-//import java.util.Vector;
+import java.util.ArrayList;
 
-public class PerceptronYoungTraveller implements PerceptronTraveller{
-	//age 16-25
+public class PerceptronYoungTraveller implements PerceptronTraveller {
+	// age 16-25
 	private int age;
-
-
-	//orizo hardcoded ta dianismata weights kai 1 bias
-	public PerceptronYoungTraveller(int age) {
-		this.setAge(age);
+	
+	public PerceptronYoungTraveller() {
+		super();
+		
 	}
 
+	public PerceptronYoungTraveller(int age) {
+		age=20;
+		this.setAge(20);
+
+	}
+
+	int array_vector[] = { 1, 1, 1, 1, -1, -1, 1, 1 };// 10 features + bias =1
+
+	
+	
+	public static boolean recommend() {
+		//if true
+	
+		if {
+			return ArrayList.toLowerCase();
+			else {
+				//if false
+			}
+		return ArrayList.toUpperCase();
+		} 
+	}		
+		
+		
+	public int[] getArray_vector() {
+		return array_vector;
+	}
+
+	public void setArray_vector(int[] array_vector) {
+		this.array_vector = array_vector;
+	}
 
 	public int getAge() {
 		return age;
 	}
 
-
 	public void setAge(int age) {
 		this.age = age;
 	}
 
-
-	
 }
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*public int YoungAge;
-
-
-@Override
-double calculate_similarity(City obj) {
-	
-
-
-	double sum_interseption=0 , sum_union=0; 
-	
-	for(int i=0 ; i<10 ; i++) {
-		if(obj.getTerm(i)>1 && getTerm(i)>1) {
-			sum_interseption +=1;
-		}
-		if(obj.getTerm(i)>1 || getTerm(i)>1) {
-			sum_union +=1;
-		}
-	}
-	
-	if(sum_union == 0) {
-		return 0;
-	}
-	
-	return sum_interseption/sum_union;
-}*/
