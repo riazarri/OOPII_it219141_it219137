@@ -80,7 +80,7 @@ public City(String city,String country) {
 		
 		protected static double normalizedGeodesicDis(double dis) {
 			//theoroume os maxdist thn apostash athina- sidney
-			double maxdist =15325.004318104428 , sum;
+			double maxdist = 15325.004318104428 , sum;
 			//sum = dist/maxdist;
 			sum = 1051.715047013162/maxdist; //apostasi Rome
 		
