@@ -1,32 +1,31 @@
 package Towns;
 
+import java.util.ArrayList;
+
 public class PerceptronElderTraveller implements PerceptronTraveller {
 	// age 60-115
 	private int age;
 
-	public PerceptronElderTraveller() {
-		super();
-
-	}
-
+	
 	public PerceptronElderTraveller(int age) {
 		this.setAge(age);
 
 	}
 
-	double array_vector[] = { 1, 1, 0, 0, 1, 1, 1, 0.23, 0.33, 0.11, 0 };// 10 features (+) bias=0
+	double ArrayVector[] = { 1, 1, 0, 0, 1, 1, 1, 0.23, 0.33, 0.11, 0 };// 10 features (+) bias=0
 	
-	public static boolean recommend() {
-		return false;
-
+	@Override
+	public ArrayList<City> recommend() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	public double[] getArray_vector() {
-		return array_vector;
+		return ArrayVector;
 	}
 
-	public void setArray_vector(double[] array_vector) {
-		this.array_vector = array_vector;
+	public void setArray_vector(double[] ArrayVector) {
+		this.ArrayVector = ArrayVector;
 	}
 
 	public void setAge(int age) {

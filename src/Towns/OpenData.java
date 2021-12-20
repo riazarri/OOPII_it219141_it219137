@@ -7,7 +7,6 @@ import weather.OpenWeatherMap;
 import wikipedia.MediaWiki;
 
 public class OpenData {
-
 	/**
 	 * Retrieves weather information, geotag (lan, lon) and a Wikipedia article for
 	 * a given city.
@@ -22,7 +21,7 @@ public class OpenData {
 				"http://api.openweathermap.org/data/2.5/weather?q=" + city + "," + country + "&APPID=" + appid + ""),
 				OpenWeatherMap.class);
 		double[] array = new double[4];
-		
+
 		array[0] = weather_obj.getCoord().getLat();
 		array[1] = weather_obj.getCoord().getLon();
 		array[2] = weather_obj.getClouds().getAll();
@@ -37,7 +36,6 @@ public class OpenData {
 		// "+mediaWiki_obj.getQuery().getPages().get(0).getExtract());
 		return array;
 	}
-
 
 	public static String getArticle(String city) throws IOException {
 		String article;

@@ -1,6 +1,7 @@
 package Towns;
 
 import java.io.IOException;
+
 import java.lang.NullPointerException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -14,14 +15,14 @@ import java.util.List;
 public class Main {
 
 	
-	List<City> cities = createList();
+
+	//public static Object city;
 
 	public static void main(String[] args) throws IOException {
+		ArrayList<City> list =arraylistExamples();
+        list.get(0);
 
-
-		private static List<City> createList(){
-			
-			// kalo ti synarthsh newCity
+		// kalo ti synarthsh newCity
 		City rome = City.newCity("Rome", "it");
 		City moscow = City.newCity("Moscow", "ru");
 		City corfu = City.newCity("Corfu", "gr");
@@ -33,22 +34,19 @@ public class Main {
 		City cairo = City.newCity("Cairo", "eg");
 		City sydney = City.newCity("Sydney", "au");
 		
-		Collections.addAll(cities, City.newCity("",""));
+		//Collections.addAll(cities, City.newCity("",""));
 		
-		/*for (int i=0;i<allDeps.size();i++){
-			if (allDeps.get(i).getName().equals(“Physics”)){
-			allDeps.remove(i); //και διαγραφή
-			break; //σταματώ την επανάληψη
-			}
-			}*/
-		
-		
-		hashtableCollection();
-		  /*for (int i = 0; i < 10; i++) {
+
+		  for (int i = 0; i < 10; i++) {
 			  System.out.println(rome.getcinema()[i]+rome.getsea()[i]+rome.getcinema()[i]
 		 );
 		  
-		 }*/
+		 }
+		  ArrayList<City> cityList = new Arraylist<>();
+			//create city objects
+			cityList.add(new City("Athens", "gr"));
+	        cityList.add(new City("Rome","Italy"));
+		}
 		 
 		 /*
 		 * for (int i = 0; i < 10; i++) { System.out.println(cairo.getsea()[i]);
@@ -56,12 +54,10 @@ public class Main {
 		 * }
 		 */
 
-		/*
-		 * for (int i = 0; i < 10; i++) { System.out.println(cairo.getAll()[i]);
-		 * 
-		 * }
-		 */
-		PerceptronTraveller trav;
+		
+		
+		  
+		  /*PerceptronTraveller trav;
 		trav = new PerceptronYoungTraveller();
 		
 		  PerceptronTraveller trav = new PerceptronTraveller();
@@ -76,69 +72,16 @@ public class Main {
 			  PerceptronMiddleTraveller.recommend();
 		  }else if(trav.age > 60 || trav.age <=115) {
 			  PerceptronElderTraveller.recommend();
-		  }
+		  }*/
 		  
-			   //trav1.setAge(trav1, 20);
-		
-	  /*List<City> countries = createList();
-		  
-		    private static List<City> createList(){
-
-		        List<City> cities = new ArrayList<>();
-
-		        cities.add(newCity("Rome", "it"));
-		        cities.add(newCity("Moscow", "ru"));
-		        cities.add(newCity("Sydney", "au"));
-		        cities.add(newCity("Cairo", "eg"));
-		        cities.add(newCity("Croatia", "hr"));
-
-		        return cities;
-		    }*/
-	}
-		private static void hashtableCollection() {
-			
-			    Hashtable<String, String> weekDaysHashTable = new Hashtable<String, String>(); //The collections is an object!
-			    
-				weekDaysHashTable.put(cities, new String("Monday"));
-			    weekDaysHashTable.put(cities, new String("Tuesday"));
-			    weekDaysHashTable.put(cities, new String("Wednesday"));
-			    weekDaysHashTable.put(cities, new String("Thursday"));
-			    weekDaysHashTable.put(cities, new String("Friday"));
-			    weekDaysHashTable.put(cities, new String("Saturday"));
-			    weekDaysHashTable.put(cities, new String("Sunday"));
-			    System.out.println("contents of weekDaysHashTable and time: " + weekDaysHashTable + cities);
-		
-	 // print out the Day of the Week 
-		class GetDayFromDate {
-		 
-		    
-		 
-		        Date now = new Date();
-		 
-		        SimpleDateFormat simpleDateformat = new SimpleDateFormat("E"); // the day of the week abbreviated
-		        System.out.println(simpleDateformat.format(now));
-		 
-		        simpleDateformat = new SimpleDateFormat("EEEE"); // the day of the week spelled out completely
-		        System.out.println(simpleDateformat.format(now));
-		 
-		        Calendar calendar = Calendar.getInstance();
-		        calendar.setTime(now);
-		        System.out.println(calendar.get(Calendar.DAY_OF_WEEK)); // the day of the week in numerical format
-		
-		    
-		
+	
 	}
 
 		
 		
-}
 
-/* ArrayList<String> cities = new ArrayList<>();
-	cities.add("Rome","it");
-cities.add("Berlin","de");
 
-System.out.println("cities in arraylist: "+cities);
-*/
+
 	
 	
 

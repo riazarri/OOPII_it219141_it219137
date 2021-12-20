@@ -12,31 +12,36 @@ import java.util.Set;
 import static Towns.Normalize.*;
 
 public class City {
+	private int timestamp;
+	private static ArrayList<City> cities = new ArrayList<City>(); //ArrayList of cities
 	
+	public ArrayList<City> getCity(){
+		return cities;
+	}
+	public ArrayList<City> setCity(){
+		return cities;
+	}
 
-	private double[] arrayVector = new double[10];
-	int timestamp;
+	//public void add
+	
+	
+	private double[] ArrayVector = new double[10];
+	
 
 	public City(double cafe, double sea, double cinema, double stadium, double theater, double mountain,
 			double restaurant, double kelvin, double clouds, double coord) {
-		this.arrayVector[0] = cafe;
-		this.arrayVector[1] = sea;
-		this.arrayVector[2] = cinema;
-		this.arrayVector[3] = stadium;
-		this.arrayVector[4] = theater;
-		this.arrayVector[5] = mountain;
-		this.arrayVector[6] = restaurant;
-		this.arrayVector[7] = kelvin;
-		this.arrayVector[8] = clouds;
-		this.arrayVector[9] = coord;
+		this.ArrayVector[0] = cafe;
+		this.ArrayVector[1] = sea;
+		this.ArrayVector[2] = cinema;
+		this.ArrayVector[3] = stadium;
+		this.ArrayVector[4] = theater;
+		this.ArrayVector[5] = mountain;
+		this.ArrayVector[6] = restaurant;
+		this.ArrayVector[7] = kelvin;
+		this.ArrayVector[8] = clouds;
+		this.ArrayVector[9] = coord;
 	}
-
-
-	/*public City(String city, String domain) {
-		ArrayList<String> cities = new ArrayList<String>();
-		 	
-		    System.out.println(cities);
-		  }*/
+	
 	public static City newCity(String city, String domain) throws IOException {
 		
 		
@@ -73,7 +78,7 @@ public class City {
 
 		City Obj = new City(count[0], count[1], count[2], count[3], count[4], count[5], count[6], y, z, x);
 
-		return Obj;
+		return  Obj;
 	}
 
 	// h countCriterionfCity psaxnei sto article ti leksi poy psaxnoyme, sthn timh
@@ -98,37 +103,26 @@ public class City {
 		return count / 10.0;
 
 	}
-	
 
-	
-
-
-	
-
-	
 	public double[] getcinema() {
-		return arrayVector;
+		return ArrayVector;
 	}
 
 	public double[] getsea() {
-		return arrayVector;
+		return ArrayVector;
 	}
 
 
 	public double[] getArrayVector() {
-		return arrayVector;
+		return ArrayVector;
 	}
 
-	public void setArrayVector(double[] arrayVector) {
-		this.arrayVector = arrayVector;
+	public void setArrayVector(double[] ArrayVector) {
+		this.ArrayVector = ArrayVector;
 	}
 
-
-	public static boolean newCity() {
-		
-		return false;
-	}
 	
-
-
+	
 }
+
+
